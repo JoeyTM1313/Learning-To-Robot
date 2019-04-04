@@ -6,11 +6,14 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public abstract class Library extends OpMode {
     // Declare Hardware Devices
-    public static DcMotor topRight, bottomRight, topLeft, bottomLeft;
+    public static DcMotor frontLeft, frontRight, backLeft, backRight;
 
     // Declare initializing method
     public void hardwareInit() {
-        topRight = HardwareMap.
+        frontLeft = hardwareMap.dcMotor.get("m0");
+        frontRight = hardwareMap.dcMotor.get("m1");
+        backLeft = hardwareMap.dcMotor.get("m2");
+        backRight = hardwareMap.dcMotor.get("m3");
     }
     //Declare other helper methods
 
