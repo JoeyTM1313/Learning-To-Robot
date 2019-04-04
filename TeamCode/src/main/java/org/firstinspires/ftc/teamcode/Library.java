@@ -67,5 +67,5 @@ public abstract class Library extends OpMode {
 
         drive(sums[0], sums[1], sums[2], sums[3]);
 
-    }
+    } /* OMNI IS WHAT WE USE, DRIVE IS FOR OMNI TO USE*/
 }
