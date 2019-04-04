@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import java.util.*;
 
 public abstract class Library extends OpMode {
     // Declare Hardware Devices
@@ -14,6 +15,11 @@ public abstract class Library extends OpMode {
     }
     //Declare other helper methods
 
+    // Constants
+    static float attenuationfactor;
+    static double initial_position = 0;
+    static double moveRate = .005;
+    static boolean servosMoving = false;
 
     public static void drive(float lf, float rf, float lb, float rb) {
     /*
@@ -28,7 +34,13 @@ public abstract class Library extends OpMode {
 
         //power settings for motors.
     }
-
+    public static float maxValue(float array[]){
+        float max = 0f;
+        for (float i: array){
+            if(i>max){ max = i; }
+        }
+        return max;
+    }
     public static void omni(float l, float r, float s) {
     /*
     Omni-driving function.
