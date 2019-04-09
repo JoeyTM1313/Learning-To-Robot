@@ -24,9 +24,11 @@ public class teleOp extends Library {
         telemetry.addData("l,s,r respectively ",floatArray[0]);
         telemetry.addData("l,s,r respectively ",floatArray[1]);
         telemetry.addData("l,s,r respectively ",floatArray[2]);
+        //Every SAMPLES_PER_SECOND
+            //Save floatArray values in a file in the format of "l s r"
+
 
         //defining the stuff. linear = straight, rotation = turning, side = skating.
         //Linear - rotation will compensate one side to allow the other side to overrate
-
     }
 }
