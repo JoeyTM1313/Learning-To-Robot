@@ -21,7 +21,9 @@ public class teleOp extends Library {
         floatArray[1]=side;
         floatArray[2]=rotation;  //array of three to save values into arrayList tripleValues
         tripleValues.add(floatArray);
-        telemetry.addData("l,s,r respectively ",floatArray);
+        telemetry.addData("l,s,r respectively ",floatArray[0]);
+        telemetry.addData("l,s,r respectively ",floatArray[1]);
+        telemetry.addData("l,s,r respectively ",floatArray[2]);
 
         //defining the stuff. linear = straight, rotation = turning, side = skating.
         //Linear - rotation will compensate one side to allow the other side to overrate
