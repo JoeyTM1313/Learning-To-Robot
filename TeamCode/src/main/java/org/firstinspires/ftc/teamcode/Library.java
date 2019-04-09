@@ -23,7 +23,7 @@ public abstract class Library extends OpMode {
     static double initial_position = 0;
     static double moveRate = .005;
     static boolean servosMoving = false;
-
+	static int SAMPLES_PER_SECOND = 10;
 	public static void drive(float lf, float rf, float lb, float rb) {
 		/*
 		Provides basic motor power to all 4 motors.
@@ -37,7 +37,7 @@ public abstract class Library extends OpMode {
 
 		// power settings for motors.
 	}
-    public static float maxValue(float array[]){
+    public static float maxValue(float array[]) {
         float max = 0f;
         for (float i: array){
             if(i>max){ max = i; }
