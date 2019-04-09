@@ -35,21 +35,8 @@ public abstract class Library extends OpMode {
 		backLeft.setPower(-lb);
 		backRight.setPower(rb);
 
-<<<<<<< HEAD
 		// power settings for motors.
 	}
-
-	public static void omni(float l, float r, float s) {
-		/*
-		Omni-driving function.
-		@param: l, linear component, r, rotational component, and s, horizontal component
-		 */
-		float[] forwardMultiplier = { 1f, 1f, 1f, 1f };
-		float[] rotationalMultiplier = { -1f, 1f, -1f, 1f };
-		float[] horizontalMultiplier = { -1f, 1f, 1f, -1f };
-=======
-        //power settings for motors.
-    }
     public static float maxValue(float array[]){
         float max = 0f;
         for (float i: array){
@@ -65,7 +52,6 @@ public abstract class Library extends OpMode {
         float[] forwardMultiplier = {1f, 1f, 1f, 1f};
         float[] rotationalMultiplier = {-1f, 1f, -1f, 1f};
         float[] horizontalMultiplier = {-1f, 1f, 1f, -1f};
->>>>>>> 735d66d689400e35067e743cc3fb7628a075feb3
 
 		float[] forwardComponent = new float[4];
 		float[] rotationalComponent = new float[4];
