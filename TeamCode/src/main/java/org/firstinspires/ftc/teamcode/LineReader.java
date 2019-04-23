@@ -7,14 +7,21 @@ import java.util.ArrayList;
 
 public class LineReader {
 
-    public static void main(String[] args) {
-        ArrayList<String> keyframes = readFile("./test.txt");
+    //for testing purposes only
+//    public static void main(String[] args) {
+//        ArrayList<String> keyframes = readFile("./test.txt");
+//
+//        for(String line:keyframes) {
+//            System.out.println(line);
+//        }
+//    }
 
-        for(String line:keyframes) {
-            System.out.println(line);
-        }
-    }
 
+    /**
+      *  Reads a file from the disk, line-by-line
+      *  @return an ArrayList of Strings containing the lines of the file
+      *  @param fileAddress Local address of file to read
+    */
     public static ArrayList<String> readFile(String fileAddress) {
         String thisLine;
         BufferedReader textFile;
