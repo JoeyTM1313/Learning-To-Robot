@@ -27,8 +27,7 @@ public class TestAuto extends Library {
             currentLineIndex++;
 
             String currentLine = keyframes.get(currentLineIndex);
-
-
+            
             String[] lrs = currentLine.split("\\|", 3);
 
             omni(Float.parseFloat(lrs[0]), Float.parseFloat(lrs[2]), Float.parseFloat(lrs[1]));
