@@ -3,7 +3,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import java.util.ArrayList;
 
-@TeleOp(name = "teleOp")
+@TeleOp(name = "IamaMeatPopsicle")
 public class teleOp extends Library {
 
     ArrayList<float[]> tripleValues = new ArrayList<>(); //array must be three long
