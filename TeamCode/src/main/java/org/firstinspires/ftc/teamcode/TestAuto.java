@@ -27,10 +27,11 @@ public class TestAuto extends Library {
             currentLineIndex++;
 
             String currentLine = keyframes.get(currentLineIndex);
-            
-            String[] lrs = currentLine.split("\\|", 3);
 
-            omni(Float.parseFloat(lrs[0]), Float.parseFloat(lrs[2]), Float.parseFloat(lrs[1]));
+            //Format: l|s|r
+            String[] lsr = currentLine.split("\\|", 3);
+
+            omni(Float.parseFloat(lsr[0]), Float.parseFloat(lsr[1]), Float.parseFloat(lsr[2]));
         }
     }
 }
