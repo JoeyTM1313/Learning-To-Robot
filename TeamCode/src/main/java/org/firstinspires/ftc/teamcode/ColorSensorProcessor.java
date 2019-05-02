@@ -79,11 +79,11 @@ public class ColorSensorProcessor {
      * Tests whether the current hex code is `x` percent from a given hex value.
      *
      *
-     * @param percent The range (by percent of color change) that'll pass the test. In Decimal Format-- e.g.
-     * @param hexCode The hex code which you want to test nearness to.
+     * @param percent the range (by percent of color change) that'll pass the test.
+     * @param hexCode the hex code which you want to test nearness to.
      *
      *
-     * @return Bool representing whether your test pasts or not.
+     * @return a bool representing whether your test passes or not.
      */
     public boolean isInRangeFrom(float percent, String hexCode) {
         //snip off the hashtag if it's included
@@ -108,7 +108,7 @@ public class ColorSensorProcessor {
 
         float averageDiff = (redDiff + greenDiff + blueDiff) / 3;
 
-        return averageDiff >= percent;
+        return averageDiff <= percent;
     }
     /**
      * The main method, which actually processes the values and resets the output variables. CALL IN LOOP!
