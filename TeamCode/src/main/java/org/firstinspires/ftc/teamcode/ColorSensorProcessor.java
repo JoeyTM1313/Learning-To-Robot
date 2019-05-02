@@ -42,7 +42,7 @@ public class ColorSensorProcessor {
 
     /**
      *
-     * @param _colorSensor Reference to the hardwar color sensor that we want to process.
+     * @param _colorSensor Reference to the hardware color sensor that we want to process.
      */
     public ColorSensorProcessor (NormalizedColorSensor _colorSensor) {
 
