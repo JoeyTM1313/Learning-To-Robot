@@ -9,7 +9,7 @@ public class ColorSensorProcessor_Test extends Library {
 
     ColorSensorProcessor color;
     public void init() {
-        color = new ColorSensorProcessor(hardwareMap.get(NormalizedColorSensor.class, "s1"));
+        color = new ColorSensorProcessor(hardwareMap.get(NormalizedColorSensor.class, "color1"));
         hardwareInit();
     }
 
