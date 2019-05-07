@@ -9,7 +9,7 @@ import org.firstinspires.ftc.robotcore.internal.android.dx.util.Output;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 @TeleOp(name = "IamaMeatPopsicle")
@@ -52,9 +52,14 @@ public class teleOp extends Library {
         if(time.milliseconds() % 20 == 0) {
             telemetry.addData("Adding data...","x");
             try {
+                OutputStream OutputStream = new FileOutputStream("./test.txt");
+                OutputStreamWriter writer = new OutputStreamWriter(OutputStream);
+                String linearF = Float.toString(linear);
+                String sideF = Float.toString(side);
+                String rotationF = Float.toString(rotation);
                 //Every SAMPLES_PER_SECOND
                 //Save floatArray values in a file in the format of "l|s|r"
-                outputStreamWriter.write("" + linear + "|" + side + "|" + rotation);
+                writer.write(linearF + "|" + sideF + "|" + rotationF);
                 telemetry.addData("Success:", "yes");
             } catch(Exception ex) {
                 telemetry.addData("Exception:", ex);
