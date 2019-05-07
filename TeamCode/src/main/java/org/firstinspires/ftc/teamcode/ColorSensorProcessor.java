@@ -93,14 +93,14 @@ public class ColorSensorProcessor {
         if(percent > 1 ) percent = percent / 100;
 
         //parse hexCode
-        int targetRed = Integer.parseInt(hexCode.substring(0,2),16);
-        int targetGreen = Integer.parseInt(hexCode.substring(2,4),16);
-        int targetBlue = Integer.parseInt(hexCode.substring(4,6),16);
+        float targetRed = (float)Integer.parseInt(hexCode.substring(0,2),16);
+        float targetGreen = (float)Integer.parseInt(hexCode.substring(2,4),16);
+        float targetBlue = (float)Integer.parseInt(hexCode.substring(4,6),16);
 
         //set values for current hexCode
-        int currentRed = Color.red(this.colorReturned);
-        int currentGreen = Color.green(this.colorReturned);
-        int currentBlue = Color.blue(this.colorReturned);
+        float currentRed = (float)Color.red(this.colorReturned);
+        float currentGreen = (float)Color.green(this.colorReturned);
+        float currentBlue = (float)Color.blue(this.colorReturned);
 
         float redDiff = Math.abs(targetRed - currentRed) / 255;
         float greenDiff = Math.abs(targetGreen - currentGreen) / 255;
