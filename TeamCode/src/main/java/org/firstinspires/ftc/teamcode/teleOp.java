@@ -9,7 +9,8 @@ import org.firstinspires.ftc.robotcore.internal.android.dx.util.Output;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.*;
+import java.io.OutputStreamWriter;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 @TeleOp(name = "IamaMeatPopsicle")
