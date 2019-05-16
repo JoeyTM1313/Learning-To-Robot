@@ -37,6 +37,13 @@ public abstract class Library extends OpMode {
 
 		// power settings for motors.
 	}
+	public static void driveUntil(float distanceInCM){
+		float startPosition = frontLeft.getCurrentPosition();
+		float rotations = distanceInCM/31.4f*360;//360 if its in degrees
+		while(frontLeft.getCurrentPosition()<rotations + startPosition)
+		{
+			omni(1,0,0);
+		}
     public static float maxValue(float array[]) {
         float max = 0f;
         for (float i: array){
