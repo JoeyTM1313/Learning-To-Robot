@@ -20,7 +20,7 @@ public class teleOp extends Library {
     FileOutputStream fileOutputStream;
     {
         try {
-            fileOutputStream = new FileOutputStream(new File("./text.txt"));
+            fileOutputStream = new FileOutputStream(new File("./test.txt"));
         } catch (FileNotFoundException e) {
             telemetry.addData(e.getMessage(),"");
         }
