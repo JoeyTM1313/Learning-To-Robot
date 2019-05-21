@@ -20,7 +20,8 @@ public abstract class Library extends OpMode {
 
 		//Safety Check: run through the list of voltage sensors; if any of them are below the minimum voltage, exit.
 		for (VoltageSensor voltageSensor : hardwareMap.voltageSensor) {
-			if (voltageSensor.getVoltage() < MINIMUM_BATTERY_VOLTAGE) System.exit(0);
+			if (voltageSensor.getVoltage() < WARNING_BATTERY_VOLTAGE) telemetry.addData("WARNING: ", "BATTERY LOW");
+			if (voltageSensor.getVoltage() < REPLACE_BATTERY_VOLTAGE) telemetry.addData("WARNING: ", "BATTERY VERY LOW; REPLACE IMMEDIATELY");
 		}
 	}
 	// Declare other helper methods
@@ -31,7 +32,8 @@ public abstract class Library extends OpMode {
     static double moveRate = .005;
     static boolean servosMoving = false;
 	static int SAMPLES_PER_SECOND = 10;
-	static double MINIMUM_BATTERY_VOLTAGE = 10;
+	static double REPLACE_BATTERY_VOLTAGE = 10;
+	static double WARNING_BATTERY_VOLTAGE = 11;
 	public static void drive(float lf, float rf, float lb, float rb) {
 		/*
 		Provides basic motor power to all 4 motors.
