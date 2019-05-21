@@ -11,8 +11,8 @@ public abstract class NewLibrary extends OpMode {
 
     // Declare initializing method
     public void hardwareInit() {
-        frontLeft = hardwareMap.dcMotor.get("m0");
-        frontRight = hardwareMap.dcMotor.get("m1");
+        frontLeft = hardwareMap.dcMotor.get("m1");
+        frontRight = hardwareMap.dcMotor.get("m2");
 //        backLeft = hardwareMap.dcMotor.get("m2");
 //        backRight = hardwareMap.dcMotor.get("m3");
     }

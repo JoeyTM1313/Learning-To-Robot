@@ -3,6 +3,8 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.VoltageSensor;
+
 import java.util.*;
 
 public abstract class Library extends OpMode {
@@ -15,6 +17,11 @@ public abstract class Library extends OpMode {
 		frontRight = hardwareMap.dcMotor.get("m1");
 		backLeft = hardwareMap.dcMotor.get("m2");
 		backRight = hardwareMap.dcMotor.get("m3");
+
+		//Safety Check: run through the list of voltage sensors; if any of them are below the minimum voltage, exit.
+		for (VoltageSensor voltageSensor : hardwareMap.voltageSensor) {
+			if (voltageSensor.getVoltage() < MINIMUM_BATTERY_VOLTAGE) System.exit(0);
+		}
 	}
 	// Declare other helper methods
 
@@ -24,6 +31,7 @@ public abstract class Library extends OpMode {
     static double moveRate = .005;
     static boolean servosMoving = false;
 	static int SAMPLES_PER_SECOND = 10;
+	static double MINIMUM_BATTERY_VOLTAGE = 10;
 	public static void drive(float lf, float rf, float lb, float rb) {
 		/*
 		Provides basic motor power to all 4 motors.
@@ -37,16 +45,16 @@ public abstract class Library extends OpMode {
 
 		// power settings for motors.
 	}
-	public static void driveUntil(float distanceInCM){
+	public static void driveUntil(float distanceInCM) {
 		float startPosition = frontLeft.getCurrentPosition();
-		float rotations = distanceInCM/31.4f*360;//360 if its in degrees
-		while(frontLeft.getCurrentPosition()<rotations + startPosition)
-		{
-			omni(1,0,0);
+		float rotations = distanceInCM / 31.4f * 360;//360 if its in degrees
+		while (frontLeft.getCurrentPosition() < rotations + startPosition) {
+			omni(1, 0, 0);
 		}
+	}
     public static float maxValue(float array[]) {
         float max = 0f;
-        for (float i: array){
+        for (float i : array){
             if(i>max){ max = i; }
         }
         return max;

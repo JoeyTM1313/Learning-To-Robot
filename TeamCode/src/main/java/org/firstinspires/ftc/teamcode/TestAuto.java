@@ -20,18 +20,19 @@ public class TestAuto extends Library {
     }
 
     public void loop() {
-        if(time.milliseconds() % (1000/SAMPLES_PER_SECOND) == 0 && currentLineIndex < keyframes.size()) {
+        if(time.milliseconds() % (1000/SAMPLES_PER_SECOND) == 0) {
             telemetry.addData("Time at which we are doing stuff:", time.milliseconds());
             telemetry.addData("Line" + currentLineIndex, keyframes.get(currentLineIndex));
 
             currentLineIndex++;
+            if(keyframes.size() > currentLineIndex) {
+                String currentLine = keyframes.get(currentLineIndex);
 
-            String currentLine = keyframes.get(currentLineIndex);
+                //Format: l|s|r
+                String[] lsr = currentLine.split("\\|", 3);
 
-            //Format: l|s|r
-            String[] lsr = currentLine.split("\\|", 3);
-
-            omni(Float.parseFloat(lsr[0]), Float.parseFloat(lsr[1]), Float.parseFloat(lsr[2]));
+                omni(Float.parseFloat(lsr[0]), Float.parseFloat(lsr[1]), Float.parseFloat(lsr[2]));
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ import java.io.OutputStreamWriter;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-@TeleOp(name = "IamaMeatPopsicle")
+@TeleOp(name = "NewTeleOp")
 public class NewTeleop extends NewLibrary {
     ElapsedTime time = new ElapsedTime();
 
