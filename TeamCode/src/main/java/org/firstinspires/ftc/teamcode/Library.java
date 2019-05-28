@@ -10,6 +10,7 @@ import java.util.*;
 public abstract class Library extends OpMode {
 	// Declare Hardware Devices
 	public static DcMotor frontLeft, frontRight, backLeft, backRight;
+	public static VoltageSensor voltSensor;
 
 	// Declare initializing method
 	public void hardwareInit() {
@@ -17,6 +18,8 @@ public abstract class Library extends OpMode {
 		frontRight = hardwareMap.dcMotor.get("m1");
 		backLeft = hardwareMap.dcMotor.get("m2");
 		backRight = hardwareMap.dcMotor.get("m3");
+		voltSensor = hardwareMap.voltageSensor.get("Motor Controller 1");
+
 
 		//Safety Check: run through the list of voltage sensors; if any of them are below the minimum voltage, exit.
 		for (VoltageSensor voltageSensor : hardwareMap.voltageSensor) {
@@ -61,6 +64,16 @@ public abstract class Library extends OpMode {
         }
         return max;
     }
+    public static void battery(){
+		voltSensor.getVoltage();
+		System.out.println(voltSensor);
+		try {
+			if (voltSensor != voltSensor){
+				System.out.println(voltSensor);
+			}
+		} catch(Exception ex) {}
+	}
+
     public static void omni(float l, float r, float s) {
     /*
     Omni-driving function.

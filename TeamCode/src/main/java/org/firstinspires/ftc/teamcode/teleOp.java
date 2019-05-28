@@ -13,7 +13,7 @@ import java.io.OutputStreamWriter;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-@TeleOp(name = "IamaMeatPopsicle")
+@TeleOp(name = "Banana")
 public class teleOp extends Library {
     ElapsedTime time = new ElapsedTime();
 
@@ -41,6 +41,7 @@ public class teleOp extends Library {
         int currentLineIndex = 0;
         //defining the stuff. linear = straight, rotation = turning, side = skating.
         //Linear - rotation will compensate one side to allow the other side to overrate
+        battery();
         omni(linear, rotation, side);
         if(aPressed){
             ArrayList<String> keyframes = LineReader.readFile("./test.txt");
