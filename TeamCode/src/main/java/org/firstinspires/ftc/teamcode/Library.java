@@ -18,7 +18,7 @@ public abstract class Library extends OpMode {
 		frontRight = hardwareMap.dcMotor.get("m1");
 		backLeft = hardwareMap.dcMotor.get("m2");
 		backRight = hardwareMap.dcMotor.get("m3");
-		voltSensor = hardwareMap.voltageSensor.get("Motor Controller 1");
+		//voltSensor = hardwareMap.voltageSensor.get("Motor Controller 1");       we need to make this a thing on the phone
 
 
 		//Safety Check: run through the list of voltage sensors; if any of them are below the minimum voltage, exit.

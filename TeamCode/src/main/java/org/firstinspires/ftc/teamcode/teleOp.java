@@ -41,7 +41,7 @@ public class teleOp extends Library {
         int currentLineIndex = 0;
         //defining the stuff. linear = straight, rotation = turning, side = skating.
         //Linear - rotation will compensate one side to allow the other side to overrate
-        battery();
+        //battery();
         omni(linear, rotation, side);
         if(aPressed){
             ArrayList<String> keyframes = LineReader.readFile("./test.txt");
