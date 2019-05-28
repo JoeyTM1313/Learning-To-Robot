@@ -66,10 +66,10 @@ public abstract class Library extends OpMode {
     }
     public static void battery(){
 		voltSensor.getVoltage();
-		System.out.println(voltSensor);
+		System.out.println("Initial Battery: " + voltSensor);
 		try {
 			if (voltSensor != voltSensor){
-				System.out.println(voltSensor);
+				System.out.println("Battery Level: " + voltSensor);
 			}
 		} catch(Exception ex) {}
 	}
