@@ -18,11 +18,11 @@ public abstract class Library extends OpMode {
 		frontRight = hardwareMap.dcMotor.get("m1");
 		backLeft = hardwareMap.dcMotor.get("m2");
 		backRight = hardwareMap.dcMotor.get("m3");
-		//voltSensor = hardwareMap.voltageSensor.get("Motor Controller 1");       we need to make this a thing on the phone
 
 
 		//Safety Check: run through the list of voltage sensors; if any of them are below the minimum voltage, exit.
 		for (VoltageSensor voltageSensor : hardwareMap.voltageSensor) {
+			voltSensor = voltageSensor;
 			if (voltageSensor.getVoltage() < WARNING_BATTERY_VOLTAGE) telemetry.addData("WARNING: ", "BATTERY LOW");
 			if (voltageSensor.getVoltage() < REPLACE_BATTERY_VOLTAGE) telemetry.addData("WARNING: ", "BATTERY VERY LOW; REPLACE IMMEDIATELY");
 		}
