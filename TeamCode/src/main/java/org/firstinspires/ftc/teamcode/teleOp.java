@@ -50,6 +50,8 @@ public class teleOp extends Library {
             //telemetry.addData("Line" + currentLineIndex, keyframes.get(currentLineIndex));
             //currentLineIndex++;
         }
+
+
         telemetry.addData("Current Time:",time.milliseconds());
         if(time.milliseconds() % 20 == 0) {
             telemetry.addData("Adding data...","x");

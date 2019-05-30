@@ -64,12 +64,12 @@ public abstract class Library extends OpMode {
         }
         return max;
     }
-    public static void battery(){
+    public void battery(){
 		voltSensor.getVoltage();
-		System.out.println("Initial Battery: " + voltSensor);
+		telemetry.addData("Initial Battery: ", voltSensor);
 		try {
 			if (voltSensor != voltSensor){
-				System.out.println("Battery Level: " + voltSensor);
+				telemetry.addData("Battery Level: ", voltSensor);
 			}
 		} catch(Exception ex) {}
 	}

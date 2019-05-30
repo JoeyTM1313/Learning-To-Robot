@@ -20,7 +20,7 @@ public class TestAuto extends Library {
     }
 
     public void loop() {
-        if(time.milliseconds() % (1000/SAMPLES_PER_SECOND) == 0) {
+        if(frontLeft.getCurrentPosition() - frontRight.getCurrentPosition() > 0) {
             telemetry.addData("Time at which we are doing stuff:", time.milliseconds());
             telemetry.addData("Line" + currentLineIndex, keyframes.get(currentLineIndex));
 
